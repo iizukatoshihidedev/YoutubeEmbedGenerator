@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Youtube埋め込みジェネレーター</title>
+    <!--Script-->
+	<script src="../../BasicTool/main.js"></script>
+	<script src="../../BasicTool/ga.js"></script>
+	<script src="./program.js"></script>
+    <!--Script-->
+    <style>
+        body {
+            text-align: center;
+        }
+        
+        .form {
+            background-color: skyblue;
+            padding: 10px 20px;
+        }
+        
+        .balloon1-left {
+            position: relative;
+            display: inline-block;
+            margin: 1.5em 0 1.5em 15px;
+            padding: 7px 10px;
+            min-width: 120px;
+            max-width: 100%;
+            color: #555;
+            font-size: 16px;
+            background: #e0edff;
+        }
+
+        .balloon1-left:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -30px;
+            margin-top: -15px;
+            border: 15px solid transparent;
+            border-right: 15px solid #e0edff;
+        }
+
+        .balloon1-left p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #chat {
+            width: auto;
+            height: 400px;
+            overflow: scroll;
+        }
+        
+        #footer {
+            position: absolute;
+            display: inline-block;
+            bottom:80px;
+            left: 0px;
+            width:100%;
+            color: #aaa;
+            font-size: 16px;
+            background: #555;
+        }
+    </style>
+</head>
+<body onload="init();">
+    <h1>Youtube埋め込みジェネレーター</h1>
+    <div class="form">
+        <div>リンク：<input type="text" name="url" id="url" size="50" value="https://youtu.be/Y9sbgjPipZg"><button type="submit" onclick="generate();"><big>生成</big></button></div>
+        <div>結果　：<input type="text" name="result" id="result" size="50" value="" readonly><button type="submit" onclick="copy();"><big>Copy</big></button></div>
+       
+    </div>
+    <hr/>
+	<div id="chat"></div>
+    <div>
+        <p>例えばこのようなURLに対応してます</p>
+        <h4>動画リンク</h4>
+        <ul>
+            <li>https://youtu.be/Y9sbgjPipZg</li>
+            <li>https://www.youtube.com/watch?v=Y9sbgjPipZg</li>
+        </ul>
+        <h4>プレイリスト</h4>
+        <ul>
+            <li>https://www.youtube.com/watch?v=Y9sbgjPipZg&list=PLExXZsIUYK9QxA2wLXoForddWXDy6x1X1</li>
+        </ul>
+    </div>
+    <div id="footer">
+        <script>
+            document.write("2021©️" + document.domain);
+        </script>
+    </div>
+</body>
+</html>
